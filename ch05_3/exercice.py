@@ -5,7 +5,12 @@ import math
 
 
 def get_num_letters(text):
-	return 0
+	nbr_car = 0
+	for car in text:
+		if car.isalnum():
+			nbr_car += 1
+
+	return nbr_car
 
 def get_word_length_histogram(text):
 	return [0]
@@ -23,6 +28,8 @@ def format_horizontal_histogram(histogram):
 
 
 if __name__ == "__main__":
+	word = "est?"
+	print(f"The number of characters for '{word}' is: {get_num_letters(word)}")
 	spam = "Stop right there criminal scum! shouted the guard confidently."
 	eggs = get_word_length_histogram(spam)
 	print(eggs, "\n")

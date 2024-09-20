@@ -5,21 +5,29 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        number *= -1
+    return number
 
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
+    for prefix in prefixes:
+        names = prefix + suffixe + ','
 
-    return [""]
+    return names
 
 
 def prime_integer_summation() -> int:
+
     return 0
 
 
 def factorial(number: int) -> int:
-    return 0
+    factorial_nbr = 1
+    for i in range(2, number+1):
+        factorial_nbr *= i
+    return factorial_nbr
 
 
 def use_continue() -> None:
@@ -27,7 +35,20 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    result = []
+    for group in groups:
+        if len(group) < 10 and len(group) > 3:
+            result.append(True)
+        if 25 in group:
+            result.append(True)
+            break
+        if 18 not in group:
+            result.append(True)
+        elif group
+    
+
+                
+    return result
 
 
 def main() -> None:

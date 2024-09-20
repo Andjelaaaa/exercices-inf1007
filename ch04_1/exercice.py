@@ -3,15 +3,21 @@
 
 
 def is_even_len(string: str) -> bool:
-    pass
+    return len(string)%2==0
 
 
 def remove_third_char(string: str) -> str:
-    pass
+    return string[:2] + string[3:]
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
+    new_string = ''
+    for carac in string:
+        if old_char == carac:
+            new_string += new_char
+        else:
+            new_string += carac
+
 
 
 def get_number_of_char(string: str, char: str) -> int:

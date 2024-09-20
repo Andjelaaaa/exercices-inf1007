@@ -45,8 +45,30 @@ def cash(value):
 	cents %= 10
 	nickels = cents // 5
 
-	return twenties, tens, fives, ones, quarters, dimes, nickels;
+	return twenties, tens, fives, ones, quarters, dimes, nickels
 
+def monnaie(valeur):
+	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près.
+    # Définition des unités pour les dollars et les cents
+    unites_dollars = [20, 10, 5, 1]
+    unites_cents = [25, 10, 5]
+
+    # Séparer la valeur en dollars et en cents
+    dollars = int(valeur)
+    cents = int(round(valeur % 1.0 * 100 / 5) * 5)
+
+    # Calculer le nombre de chaque unité de dollars
+    resultat = []
+    for unite in unites_dollars:
+        quantite, dollars = divmod(dollars, unite)
+        resultat.append(quantite)
+
+    # Calculer le nombre de chaque unité de cents
+    for unite in unites_cents:
+        quantite, cents = divmod(cents, unite)
+        resultat.append(quantite)
+
+    return tuple(resultat)
 def format_base(value, base, letters):
 	result = ""
 	abs_value = abs(value)

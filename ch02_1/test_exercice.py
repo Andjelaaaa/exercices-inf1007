@@ -24,6 +24,7 @@ class TestExercice(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    # os.chdir(f'{os.getcwd()}/ch02_1')
     if not os.path.exists('logs'):
         os.mkdir('logs')
     with open('logs/tests_results.txt', 'w') as f:

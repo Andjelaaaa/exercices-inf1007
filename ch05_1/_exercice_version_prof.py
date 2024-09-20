@@ -45,6 +45,12 @@ def factorial(number: int) -> int:
 
     return factorial_value
 
+    # Autre implémentation
+    # while number > 1:
+    #     factorial_nbr *= number
+    #     number -= 1
+    # return factorial_nbr
+
 
 def use_continue() -> None:
     for i in range(1, 11):

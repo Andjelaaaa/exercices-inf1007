@@ -1,6 +1,8 @@
 output/
 logs/
 .vs
+ch03_2/chaine_caractere = 'Bonjour'.py
+ch05_1/exemple_match_if_else
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

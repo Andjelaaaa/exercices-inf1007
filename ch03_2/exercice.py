@@ -19,10 +19,29 @@ def point_in_circle(point, circle_center, circle_radius):
 	# point[1] et circle_center[1] pour accéder au Y
 	pass
 
-def cash(value):
+def cash(valeur):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près. Il faut remplir les variables twenties, tens, fives, ones, quarters, dimes et nickels avec le quantité de chaque dénomination.
+	# Définition des unités pour les dollars et les cents
+    unites_dollars = [20, 10, 5, 1]
+    unites_cents = [25, 10, 5]
 
-	return twenties, tens, fives, ones, quarters, dimes, nickels
+    # Séparer la valeur en dollars et en cents
+    dollars = int(valeur)
+    cents = int(round(valeur % 1.0 * 100 / 5) * 5)
+
+    # Calculer le nombre de chaque unité de dollars
+    resultat = []
+    for unite in unites_dollars:
+        quantite, dollars = divmod(dollars, unite)
+        resultat.append(quantite)
+
+    # Calculer le nombre de chaque unité de cents
+    for unite in unites_cents:
+        quantite, cents = divmod(cents, unite)
+        resultat.append(quantite)
+
+    return tuple(resultat)
+	
 
 def format_base(value, base, digit_letters):
 	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.
