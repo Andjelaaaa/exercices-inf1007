@@ -6,49 +6,59 @@ from typing import List
 
 def convert_to_absolute(number: float) -> float:
     if number < 0:
-        number *= -1
+        return number * -1
     return number
 
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixe = 'JKLMNOPQ', 'ack'
-    for prefix in prefixes:
-        names = prefix + suffixe + ','
+    prefixes, suffixe = "JKLMNOPQ", "ack"
+    noms = []
+    for lettre in prefixes:
+        noms.append(lettre + suffixe)
 
-    return names
+    return noms
 
 
 def prime_integer_summation() -> int:
+    primes = [2, 3, 5]
+    number = 6
+    while len(primes) < 100:
+        for i in range(2, number // 2):
+            if number % i == 0:
+                break
+        else:
+            primes.append(number)
+        number += 1
 
-    return 0
+    return sum(primes)
 
 
 def factorial(number: int) -> int:
-    factorial_nbr = 1
-    for i in range(2, number+1):
-        factorial_nbr *= i
-    return factorial_nbr
-
+    factorial = 1
+    for i in range(1, number + 1):
+        number *= i
+    return factorial
 
 def use_continue() -> None:
-    pass
-
-
-def verify_ages(groups: List[List[int]]) -> List[bool]:
-    result = []
-    for group in groups:
-        if len(group) < 10 and len(group) > 3:
-            result.append(True)
-        if 25 in group:
-            result.append(True)
-            break
-        if 18 not in group:
-            result.append(True)
-        elif group
+    for i in range(1, 11):
+        if i == 5:
+            continue
+        print(i)
     
 
-                
-    return result
+
+def verify_ages(groups: List[List[int]]) -> List[bool]:      
+    resultat = []
+    for group in groups:
+        if len(group) > 10 or len(group) <= 3:
+            resultat.append(False)
+            continue
+        if 25 in group:
+            resultat.append(True)
+            continue
+
+
+    return resultat
 
 
 def main() -> None:

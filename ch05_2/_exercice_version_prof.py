@@ -62,8 +62,9 @@ def format_number(number, num_decimal_digits):
 
 	# Formater la partie décimale
 	decimal_str = str(int(round(decimal_part * 10**num_decimal_digits)))
-	decimal_str = "." + decimal_str + "0" * (num_decimal_digits - len(decimal_str))
-	# Approche plus automagique : decimal_str = f"{decimal_part:.{num_decimal_digits}f}"[1:]
+	
+	decimal_str = f"{decimal_part:.{num_decimal_digits}f}"[1:]
+	# decimal_str = "." + decimal_str + "0" * (num_decimal_digits - len(decimal_str))
 
 	# Formater la partie entière
 	whole_part_str = ""
@@ -82,7 +83,7 @@ def get_triangle(num_rows):
 	TRIANGLE_CHAR = "A"
 
 	# Calculer la largeur
-	triangle_width = 1 + 2 * (num_rows - 1)
+	triangle_width = (num_rows - 1) * 2 + 1
 
 	# Construire première et dernière ligne (bordures pleines)
 	border_row = BORDER_CHAR * (triangle_width + 2)

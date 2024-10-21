@@ -8,25 +8,29 @@ def format_bill_total(data):
 	INDEX_NAME = 0
 	INDEX_QUANTITY = 1
 	INDEX_PRICE = 2
-
-	sous_total = 0
+	prix_sous_total = 0
 	for achat in data:
-		sous_total += achat[1] * achat[2]
-	
-	taxes = 0.15 * sous_total
-	total = sous_total + taxes
-	result = name
-	result += "\n" + f"SOUS TOTAL {sous_total:>10.2f} $"
-	result += "\n" + f"TAXES      {taxes:>10.2f} $"
-	result += "\n" + f"TOTAL      {total:>10.2f} $"
+		prix_sous_total += achat[INDEX_QUANTITY] * achat[INDEX_PRICE]
+		
+	taxes = prix_sous_total*0.15
+	prix_total = prix_sous_total + taxes
 
-	return result
+	resultat = f"SOUS TOTAL {prix_sous_total:>16.2f}"
+	resultat += f"\n" + f"TAXES      {taxes:>16.2f}"
+	resultat += f"\n" + f"TOTAL      {prix_total:>16.2f}"
+
+	
+
+
+
+	return resultat
 
 def format_bill_items(data):
 	INDEX_NAME = 0
 	INDEX_QUANTITY = 1
 	INDEX_PRICE = 2
 
+	
 	return ""
 
 

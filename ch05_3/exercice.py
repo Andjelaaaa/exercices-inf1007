@@ -5,15 +5,19 @@ import math
 
 
 def get_num_letters(text):
-	nbr_car = 0
-	for car in text:
-		if car.isalnum():
-			nbr_car += 1
-
-	return nbr_car
+	num_letters = 0
+	for chr in text:
+		num_letters += int(chr.isalnum())
+	return num_letters
 
 def get_word_length_histogram(text):
-	return [0]
+	histogram = [0]
+	for word in text.split():
+		length = get_num_letters(word)
+		if length >= len(histogram):
+			histogram += [0] * (length - len(histogram) + 1)
+		histogram[length] += int(length != 0)
+	return histogram
 
 def format_histogram(histogram):
 	ROW_CHAR = "*"

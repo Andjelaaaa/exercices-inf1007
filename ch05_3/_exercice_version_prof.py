@@ -43,12 +43,27 @@ def format_horizontal_histogram(histogram):
 
 	height = max(histogram)
 	result = ""
+
 	for i in range(height - 1, -1, -1):
 		# Compréhension de liste pour chacune des lignes
 		result += "".join([BLOCK_CHAR if elem >= i + 1 else " " for elem in histogram[1:]]) + "\n"
 	# Ajout de la dernière ligne
 	result += LINE_CHAR * len(histogram)
 	return result
+
+	# Même code en format boucles
+	# for i in range(height - 1, -1, -1):
+    #     Initialisation de la ligne vide
+    #     line = ""
+    #     for elem in histogram[1:]:
+    #         if elem >= i + 1:
+    #             line += BLOCK_CHAR
+    #         else:
+    #             line += " "
+    #     result += line + "\n"
+    
+    # Ajout de la dernière ligne
+    # result += LINE_CHAR * len(histogram)
 
 
 if __name__ == "__main__":
